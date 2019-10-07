@@ -16,8 +16,25 @@ class Mahasiswa_model {
     }
 
     public function getMahasiswaById($id){
-        $this->db->query('SELECT * FROM ' . $this->table . ' WHERE id=id');
+        $this->db->query('SELECT * FROM ' . $this->table . ' WHERE id=:id');
         $this->db->bind('id', $id);
         return $this->db->single();
     }
+
+    public function tambahDataMahasiswa($data){
+        $query = "INSERT INTO mahasiswa
+                    VALUES
+                    ('', :nama, :nrp, :jurusan, :email)";
+
+        $this->db->query($query);
+        $this->db->bind('nama', $data['nama']);
+        $this->db->bind('nrp', $data['nrp']);
+        $this->db->bind('jurusan', $data['jurusan']);
+        $this->db->bind('email', $data['email']);
+
+        $this->db->execute();
+
+        return $this->db->rowCount();
+    }
+    
 }
