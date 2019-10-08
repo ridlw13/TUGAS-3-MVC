@@ -19,7 +19,7 @@
     <div class="col-lg-6">
     <form action="<?= BASEURL; ?>/mahasiswa/cari" method="post">
         <div class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="cari mahasiswa..." name="keyword" id="keyword" autocomplete ="off">
+            <input type="text" class="form-control" placeholder="cari mahasiswa berdasarkan nama atau nrp.." name="keyword" id="keyword" autocomplete ="off">
         <div class="input-group-append">
     <button class="btn btn-outline-secondary" type="submit" id="tombolCari">Cari</button>
   </div>
